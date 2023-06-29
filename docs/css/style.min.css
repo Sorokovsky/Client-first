@@ -176,6 +176,10 @@ h6 {
           justify-content: space-between;
 }
 
+.burger {
+  display: none;
+}
+
 .menu__list {
   color: #FFF;
   line-height: 28rem;
@@ -269,7 +273,7 @@ h6 {
     z-index: 100000000;
     content: "";
     display: block;
-    right: 90rem;
+    right: 5%;
     top: 0;
     width: 60rem;
     height: 100%;
