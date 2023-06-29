@@ -66,6 +66,9 @@ body {
   line-height: 28rem;
   color: #232536;
 }
+body._lock {
+  overflow: hidden;
+}
 
 .container {
   max-width: 1310rem;
@@ -129,6 +132,13 @@ h6 {
   background-color: #EDC14A;
 }
 
+.button-light {
+  background-color: #FFF;
+}
+.button-light:hover {
+  background-color: #EDC14A;
+}
+
 .logo {
   max-width: 140rem;
   height: auto;
@@ -140,6 +150,7 @@ h6 {
   top: 0;
   display: block;
   background-color: #232536;
+  z-index: 1000;
 }
 .header__right {
   display: -webkit-box;
@@ -149,12 +160,6 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   gap: 32rem;
-}
-.header__right .button {
-  background-color: #FFF;
-}
-.header__right .button:hover {
-  background-color: #EDC14A;
 }
 .header__container {
   padding-top: 12rem;
@@ -212,5 +217,96 @@ h6 {
 @media (max-width: 991px) {
   html {
     font-size: 0.7px;
+  }
+}
+@media (max-width: 640px) {
+  .menu {
+    position: fixed;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30rem;
+    background-color: #232536;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    overflow-y: scroll;
+    padding-top: 150rem;
+    padding-bottom: 50rem;
+    -webkit-transition: 0.3s left ease;
+    -o-transition: 0.3s left ease;
+    transition: 0.3s left ease;
+  }
+  .menu._active {
+    left: 0;
+  }
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30rem;
+  }
+  .menu__link {
+    font-size: 32rem;
+  }
+
+  .header {
+    position: relative;
+  }
+  .header__left {
+    z-index: 100000;
+    width: 100%;
+    background-color: #232536;
+    margin-top: -12rem;
+    padding-top: 20rem;
+  }
+
+  .burger {
+    position: absolute;
+    z-index: 100000000;
+    content: "";
+    display: block;
+    right: 90rem;
+    top: 0;
+    width: 60rem;
+    height: 100%;
+  }
+  .burger::before, .burger span, .burger::after {
+    -webkit-transition: 0.3s -webkit-transform ease;
+    transition: 0.3s -webkit-transform ease;
+    -o-transition: 0.3s transform ease;
+    transition: 0.3s transform ease;
+    transition: 0.3s transform ease, 0.3s -webkit-transform ease;
+    position: absolute;
+    content: "";
+    top: 30rem;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    background-color: #FFF;
+  }
+  .burger span {
+    top: 40rem;
+  }
+  .burger::after {
+    top: 50rem;
+  }
+  .burger._active::before {
+    -webkit-transform: translate(5rem, 10rem) rotate(45deg);
+        -ms-transform: translate(5rem, 10rem) rotate(45deg);
+            transform: translate(5rem, 10rem) rotate(45deg);
+  }
+  .burger._active::after {
+    -webkit-transform: translate(-2rem, -10rem) rotate(-45deg);
+        -ms-transform: translate(-2rem, -10rem) rotate(-45deg);
+            transform: translate(-2rem, -10rem) rotate(-45deg);
+  }
+  .burger._active span {
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
   }
 }

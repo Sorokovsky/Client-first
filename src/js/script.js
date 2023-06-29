@@ -1,3 +1,4 @@
-import { isWebp, linksToButton } from "./modules/functions.js";
+import { isWebp, linksToButton, mobileMenu } from "./modules/functions.js";
 isWebp();
 linksToButton();
+mobileMenu();

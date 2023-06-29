@@ -2,6 +2,7 @@ header(class="header")
     .container.header__container 
         .header__left
             +logo()
-        nav.header__right
+        nav.header__right.menu
             +menu(menuItems)
-            +button('Subscribe')
+            +button('Subscribe', 'button-light')
+        +burger()

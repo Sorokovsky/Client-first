@@ -1,4 +1,6 @@
-import { burger, menu, header, } from "./variables.js";
+let header = document.querySelector('.header'), 
+           burger = document.querySelector('.burger'), 
+           menu = document.querySelector('.menu');
 export function openPopub(popub) {
     if (!popub.classList.contains('_active')) {
         popub.classList.add('_active');
@@ -13,18 +15,16 @@ const burgerToggle = () => {
     if (burger.classList.contains("_active")) {
         burger.classList.remove("_active");
         document.body.classList.remove("_lock");
-        burger.children[0].classList.remove("_active");
         closePopub(menu);
     }
     else if (!burger.classList.contains("_active")) {
         burger.classList.add("_active");
         document.body.classList.add("_lock");
-        burger.children[0].classList.add("_active");
         openPopub(menu);
     }
 };
 export const mobileMenu = () => {
-    if (window.innerWidth <= 991) {
+    if (window.innerWidth <= 640) {
         burger.addEventListener('click', burgerToggle);
     }
 };

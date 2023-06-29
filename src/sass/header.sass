@@ -4,14 +4,11 @@
     top: 0
     display: block
     background-color: $black
+    z-index: 1000
     &__right
         display: flex
         align-items: center
         gap: 32rem
-        .button
-            background-color: $light
-            &:hover
-                background-color: $buttonHover
     &__container
         padding-top: 12rem
         padding-bottom: 12rem
@@ -46,3 +43,61 @@
 @media (max-width: 991px)
     html
         font-size: 0.7px
+@media (max-width: 640px)
+    .menu
+        position: fixed
+        flex-direction: column
+        gap: 30rem
+        background-color: $black
+        width: 100%
+        height: 100vh
+        top: 0
+        left: -100%
+        overflow-y: scroll
+        padding-top: 150rem
+        padding-bottom: 50rem
+        transition: .3s left ease
+        &._active
+            left: 0
+        &__list
+            flex-direction: column
+            gap: 30rem
+        &__link
+            font-size: 32rem
+    .header
+        position: relative
+        &__left
+            z-index: 100000
+            width: 100%
+            background-color: $black
+            margin-top: -12rem
+            padding-top: 20rem
+    .burger
+        position: absolute
+        z-index: 100000000
+        content: ""
+        display: block
+        right: 90rem
+        top: 0
+        width: 60rem
+        height: 100%
+        &::before, span, &::after
+            transition: .3s transform ease
+            position: absolute
+            content: ""
+            top: 30rem
+            left: 0
+            width: 100%
+            height: 2rem
+            background-color: $light
+        span
+            top: 40rem
+        &::after
+            top: 50rem
+        &._active
+            &::before
+                transform: translate(5rem, 10rem) rotate(45deg)
+            &::after
+                transform: translate(-2rem, -10rem) rotate(-45deg)
+            span
+                transform: scale(0)
