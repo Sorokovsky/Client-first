@@ -68,7 +68,8 @@ body {
 }
 
 .container {
-  max-width: 1480rem;
+  max-width: 1310rem;
+  margin: 0 auto;
   padding-left: 15rem;
   padding-right: 15rem;
 }
@@ -115,8 +116,101 @@ h6 {
 .button {
   font-size: 18rem;
   display: inline-block;
+  font-weight: 700;
   font-family: Sen, sans-serif;
   line-height: 24rem;
   background-color: #FFD050;
-  padding: 16rem 48rem;
+  padding: 16rem 48.12rem;
+  -webkit-transition: 0.3s background-color ease;
+  -o-transition: 0.3s background-color ease;
+  transition: 0.3s background-color ease;
+}
+.button:hover {
+  background-color: #EDC14A;
+}
+
+.logo {
+  max-width: 140rem;
+  height: auto;
+}
+
+.header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  display: block;
+  background-color: #232536;
+}
+.header__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 32rem;
+}
+.header__right .button {
+  background-color: #FFF;
+}
+.header__right .button:hover {
+  background-color: #EDC14A;
+}
+.header__container {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 45rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu__list {
+  color: #FFF;
+  line-height: 28rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 24rem;
+}
+.menu__link {
+  position: relative;
+}
+.menu__link::after {
+  display: block;
+  position: absolute;
+  content: "";
+  bottom: -5rem;
+  left: 0;
+  width: 0%;
+  height: 2rem;
+  background-color: #FFF;
+  -webkit-transition: 0.3s width ease;
+  -o-transition: 0.3s width ease;
+  transition: 0.3s width ease;
+}
+@media (hover: hover) {
+  .menu__link:hover::after {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 0.7px;
+  }
 }

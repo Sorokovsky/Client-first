@@ -1,0 +1,48 @@
+.header
+    position: sticky
+    left: 0
+    top: 0
+    display: block
+    background-color: $black
+    &__right
+        display: flex
+        align-items: center
+        gap: 32rem
+        .button
+            background-color: $light
+            &:hover
+                background-color: $buttonHover
+    &__container
+        padding-top: 12rem
+        padding-bottom: 12rem
+        display: flex
+        align-items: center
+        gap: 45rem
+        justify-content: space-between
+.menu
+    &__list
+        color: $light 
+        line-height: 28rem
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        justify-content: space-between
+        gap: 24rem
+    &__link
+        position: relative
+        &::after
+            display: block
+            position: absolute
+            content: ""
+            bottom: -5rem
+            left: 0
+            width: 0%
+            height: 2rem
+            background-color: $light
+            transition: .3s width ease
+        @media (hover: hover)
+            &:hover::after
+                width: 100%
+@media (max-width: 991px)
+    html
+        font-size: 0.7px

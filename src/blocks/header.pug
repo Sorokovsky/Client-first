@@ -1,1 +1,7 @@
 header(class="header")
+    .container.header__container 
+        .header__left
+            +logo()
+        nav.header__right
+            +menu(menuItems)
+            +button('Subscribe')

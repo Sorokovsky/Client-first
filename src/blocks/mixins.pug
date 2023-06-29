@@ -1,3 +1,22 @@
+- 
+    let menuItems = [
+        {
+            text: "Home",
+            href: "/"
+        },
+        {
+            text: "Blog",
+            href: "/blog"
+        },
+        {
+            text: "About us",
+            href: "/about"
+        },
+        {
+            text: "Contact us",
+            href: "/contact"
+        }
+    ]
 mixin head(title, descripton, keywords)
     head
         meta(charset="UTF-8")
@@ -12,3 +31,9 @@ mixin head(title, descripton, keywords)
         title=title 
 mixin button(text)
     a(href="#").button=text
+mixin logo(href='/', img='img/logo.svg', alt='Finsweet')
+    a(href=href).logo #[img(src=img, alt=alt)]
+mixin menu(items)
+    ul.menu__list
+        for item in items
+            li.menu__item #[h6 #[a(href=item.href).menu__link #{item.text}]]  
