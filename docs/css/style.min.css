@@ -264,12 +264,15 @@ h6 {
     z-index: 100000;
     width: 100%;
     background-color: #232536;
-    margin-top: -12rem;
+    margin-top: -17rem;
     padding-top: 20rem;
   }
 
   .burger {
     position: absolute;
+    -webkit-transform: translateY(-10rem);
+        -ms-transform: translateY(-10rem);
+            transform: translateY(-10rem);
     z-index: 100000000;
     content: "";
     display: block;
