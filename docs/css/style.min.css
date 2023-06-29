@@ -270,9 +270,9 @@ h6 {
 
   .burger {
     position: absolute;
-    -webkit-transform: translateY(-10rem);
-        -ms-transform: translateY(-10rem);
-            transform: translateY(-10rem);
+    -webkit-transform: translateY(-6rem);
+        -ms-transform: translateY(-6rem);
+            transform: translateY(-6rem);
     z-index: 100000000;
     content: "";
     display: block;
