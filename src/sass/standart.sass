@@ -33,6 +33,10 @@ img
     display: flex
     min-height: 100vh
     flex-direction: column
+section
+    @include adaptive-value('margin-bottom', 128, 30, 1)
 main.main
     flex-grow: 1
     flex-shrink: 0
+    *:last-child
+        margin-bottom: 0
