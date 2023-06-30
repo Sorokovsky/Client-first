@@ -39,6 +39,28 @@
             name: "8 Figma design systems that you can download for free today."
         },
     ]
+    let categoryList = [
+        {
+            img: "@img/category/business.svg",
+            name: "Business",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+        },
+        {
+            img: "@img/category/startup.svg",
+            name: "Startup",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+        },
+        {
+            img: "@img/category/economy.svg",
+            name: "Economy",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+        },
+        {
+            img: "@img/category/technology.svg",
+            name: "Technology",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+        },
+    ]
 mixin head(title, descripton, keywords)
     head
         meta(charset="UTF-8")
@@ -70,3 +92,10 @@ mixin postsItem(post)
     .posts__item 
         p.label.posts__label By #[a(href="#")=post.author]    l   #{post.date}
         h4.posts__name #[a(href="#")=post.name]
+mixin categorys(categoryItems)
+    .category__list
+        for category in categoryItems
+            a(href="/").category__item
+                img(src=category.img, alt=category.name)
+                p.h3.category__name=category.name
+                p.category__text=category.text
