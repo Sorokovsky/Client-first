@@ -1,0 +1,57 @@
+.about
+    padding-top: 23rem
+    &__container
+        position: relative
+        z-index: 1
+        display: flex
+        align-items: flex-start
+        @include adaptive-value('gap', 82, 10, 1)
+        @include adaptive-value('padding-top', 96, 15, 1)
+        @include adaptive-value('padding-bottom', 96, 15, 1)
+        @include adaptive-value('padding-left', 80, 15, 1)
+        padding-right: 5rem
+        background-color: $lavander
+    &__cart
+        max-width: 516rem
+        p.about__cap
+            margin-bottom: 24rem
+        *:not(:last-child)
+            margin-bottom: 16rem
+        *:last-child
+            margin-bottom: 0
+    &__title
+        max-width: 481rem
+    &__link
+        font-family: Sen, sans-serif
+        font-weight: 700
+        color: $purple
+    &__decor
+        width: 100%
+        position: absolute
+        height: 23rem
+        display: block
+        top: -23rem
+        left: 0
+        display: flex
+        align-items: flex-start
+        justify-content: flex-end
+        span.yellow
+            display: block
+            height: 100%
+            flex-basis: 60.78125%
+            flex-shrink: 0
+            flex-grow: 0
+            background-color: $yellow
+        span.purple
+            content: ""
+            flex-shrink: 0
+            flex-grow: 0
+            display: block
+            height: 100%
+            width: 21.875%
+            background-color: $purple
+    @media ( max-width: 702px )
+        &__container
+            flex-direction: column
+            gap: 50rem
+            align-items: center       
