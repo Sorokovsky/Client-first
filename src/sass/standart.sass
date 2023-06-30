@@ -17,7 +17,6 @@ body
     font-size: 16rem
     font-weight: 400
     line-height: 28rem
-    height: 1000px
     color: $black
     &._lock
         overflow: hidden
@@ -28,8 +27,10 @@ body
     padding-right: 15rem
 .wrapper
     display: flex
-    min-height: 100%
+    min-height: calc(100vh - 80rem)
     flex-direction: column
+    @media (max-width: 640px)
+        min-height: calc(100vh - 68rem)
 main.main
     flex-grow: 1
     flex-shrink: 0
