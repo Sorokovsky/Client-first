@@ -1,0 +1,16 @@
+section.posts
+    .container.posts__container
+        .posts__left
+            h2.posts__title Featured Post
+            .posts__post
+                .posts__image
+                    img(src="@img/posts/image.jpg", alt="Featured Post")
+                p.label.posts__label By #[a(href="#") John Doe]   l   May 23, 2022
+                h3.posts__subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                p.posts__text Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                +button('Read More >')
+        .posts__right
+            .posts__head
+                h2.posts__title All Posts
+                a(href="#").posts__link View All
+            +postsList(posts)

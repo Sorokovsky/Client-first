@@ -1,0 +1,73 @@
+.posts
+    @include adaptive-value('padding-top', 128, 30, 1)
+    @include adaptive-value('padding-bottom', 128, 30, 1)
+    &__container
+        display: flex
+        align-items: stretch
+        gap: 32rem
+    &__left
+        flex-basis: 733rem
+        flex-grow: 1
+        flex-shrink: 1
+        *:not(:last-child)
+            margin-bottom: 32rem
+        *:last-child
+            margin-bottom: 0
+        .posts__label
+            margin-bottom: 16rem
+        .posts__subtitle
+            margin-bottom: 16rem
+    &__right
+        flex-basis: 517rem
+        flex-grow: 1
+        flex-shrink: 1
+    &__post
+        padding: 32rem
+        position: relative
+        z-index: 2
+        &::before
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            content: " "
+            z-index: 1
+            pointer-events: none
+            border: 1rem solid $mediumGrey
+            opacity: 0.10000000149011612
+    &__head
+        display: flex
+        align-items: center
+        display: flex
+        gap: 32rem
+        justify-content: space-between
+    &__link, &__label a
+        color: $purple
+    &__name
+        max-width: 369.181rem
+    &__item
+        padding: 32rem
+        transition: .3s background-color ease
+        *:not(:last-child)
+            margin-bottom: 8rem
+        @media ( hover: hover)
+            &:hover
+                background-color: $lightYellow
+@media( max-width: 732px )
+        .posts
+            &__container
+                flex-wrap: wrap
+            &__item
+                padding: 0
+                padding-top: 32rem
+            &__name
+                max-width: 100%
+            &__list
+                display: grid
+                gap: 32rem
+                grid-template-columns: repeat(2, 1fr)
+@media( max-width: 500px )
+    .posts__list
+        grid-template-columns: repeat(1, 1fr)

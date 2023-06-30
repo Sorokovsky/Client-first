@@ -34,13 +34,18 @@ h6
    background-color: $yellow
    padding: 16rem 48.12rem
    transition: .3s background-color ease
-   &:hover
-    background-color: $buttonHover
+   @media ( hover:hover)
+        &:hover
+            background-color: $buttonHover
+    
 .button-light
     background-color: $light
-    &:hover
-        background-color: $buttonHover
+    @media ( hover:hover)
+        &:hover
+            background-color: $buttonHover
+        
 .logo
+    display: block
     max-width: 140rem
     height: auto
 .typography
@@ -64,3 +69,11 @@ h6
     @media (max-width: 464px)
         font-size: 35rem
         line-height: 44rem
+.body2
+    line-height: 20rem
+    font-size: 14rem
+.label
+    font-size: 14rem
+    font-weight: 500
+    line-height: 20rem
+        
